@@ -9,7 +9,7 @@
 - Display data in metric or imperial units (Celcius / Fahrenheit)
 
 ### Available scripts
-- [] Clone this git repo and install using command: 
+- [x] Clone this git repo and install using command: 
 
 ```
 yarn install

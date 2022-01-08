@@ -1,6 +1,8 @@
 import { Button, Center, Link, Stack, Text } from "@chakra-ui/react";
 import { Link as ReactLink } from 'react-router-dom';
-import MainLayout from "../../components/Layout";
+import lazyImport from "../../utils/lazyImport";
+
+const { MainLayout } = lazyImport(() => import('src/components/Layout'), 'MainLayout');
 
 // eslint-disable-next-line import/prefer-default-export
 export function NotFoundPage() {

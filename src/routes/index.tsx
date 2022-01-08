@@ -1,6 +1,6 @@
 import { Suspense } from "react";
-import { Navigate, Outlet, useRoutes } from 'react-router-dom';
-import MainLayout from "../components/Layout";
+import { Outlet, useRoutes } from 'react-router-dom';
+import { MainLayout } from "../components/Layout";
 import Spin from "../components/Spinner";
 import lazyImport from "../utils/lazyImport";
 

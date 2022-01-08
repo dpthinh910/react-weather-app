@@ -13,7 +13,8 @@
       "src/*": ["src/*"],
       "components/*": ["src/components/*"]
     },
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "types": ["vite/client"]
   },
   "include": ["./src"]
 }

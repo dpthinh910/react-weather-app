@@ -5,6 +5,7 @@ import Spin from "../components/Spinner";
 import lazyImport from "../utils/lazyImport";
 
 const { NotFoundPage } = lazyImport(() => import('src/pages/NotFoundPage'), 'NotFoundPage');
+const { HomePage } = lazyImport(() => import('src/pages/HomePage'), 'HomePage');
 
 function App() {
   return (
@@ -21,6 +22,9 @@ export function AppRoutes() {
     {
       path: '/',
       element: <App />,
+      children: [
+        { index: true, element: <HomePage /> }
+      ]
     },
     {
       path: '*',

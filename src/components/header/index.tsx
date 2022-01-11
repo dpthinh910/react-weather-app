@@ -5,7 +5,7 @@ import UnitSwitch from './RadioCard';
 
 function SearchElement() {
   return (
-    <SearchIcon color="gray.400" />
+    <SearchIcon color="gray.200"/>
   );
 } 
 

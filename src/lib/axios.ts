@@ -20,7 +20,7 @@ axios.interceptors.request.use(authRequestInterceptor);
 axios.interceptors.response.use(
   response => response.data,
   error => {
-    const message = error.response?.data?.errors[0] || error.message;
+    const { message } = error;
     // eslint-disable-next-line no-console
     console.log('Axios error mess: ', message);
     return Promise.reject(error);

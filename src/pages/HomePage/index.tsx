@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Divider } from "@chakra-ui/react";
 import Spin from "src/components/Spinner";
+import useWeatherStore from "src/store/weather";
 import { useWeatherDetails } from "./api/getWeather";
 import { useDailyWeather } from "./api/getDailyWeather";
 
@@ -9,9 +10,8 @@ const DailyWeather = React.lazy(() => import('./components/DailyWeather'));
 
 // eslint-disable-next-line import/prefer-default-export
 export function HomePage() {
-  const [location, setLocation] = React.useState<string>('london,uk');
-  const [units, setUnits] = React.useState<string>('imperial');
-  const {data, isLoading} = useWeatherDetails({location, units});
+  const { location, units } = useWeatherStore();
+  const { data, isLoading } = useWeatherDetails({location, units});
   const queryDailyWeather = useDailyWeather({location, units});
 
   if (isLoading || queryDailyWeather.isLoading) {

@@ -15,7 +15,7 @@ function DailyWeather({ data }: DailyWeatherProps) {
         <Flex width="100%" height="30vh" gap={12} overflowX="auto" justify="space-between">
           {data.cod === '200' && 
             data.list.slice(1).map((daily: DailyWeatherChildProps) => (
-              <DailyWeatherChild daily={daily} />
+              <DailyWeatherChild key={daily.dt} daily={daily} />
             ))
           }
           { data.cod !== '200' && <Spin />}

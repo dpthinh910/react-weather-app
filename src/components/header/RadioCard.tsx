@@ -1,4 +1,6 @@
-import { Box, HStack, useRadio, useRadioGroup } from "@chakra-ui/react"
+import React from 'react';
+import { Box, HStack, useRadio, useRadioGroup } from "@chakra-ui/react";
+import useWeatherStore from "src/store/weather";
 
 function RadioCard(props: any) {
   const { getInputProps, getCheckboxProps } = useRadio(props)
@@ -38,12 +40,14 @@ function RadioCard(props: any) {
 
 // Step 2: Use the `useRadioGroup` hook to control a group of custom radios.
 function UnitSwitch() {
+  const { units, setUnits } = useWeatherStore();
+  const [unit, setUnit] = React.useState<string>(units);
   const options = ['°C', '°F']
 
   const { getRootProps, getRadioProps } = useRadioGroup({
     name: 'unit',
-    defaultValue: '°F',
-    onChange: console.log,
+    defaultValue: `${unit === 'metric' ? '°C' : '°F'}`,
+    onChange: (event: any) => setUnits(event === '°C' ? 'metric' : 'imperial'),
   })
 
   const group = getRootProps()

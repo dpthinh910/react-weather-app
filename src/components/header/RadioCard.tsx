@@ -41,12 +41,11 @@ function RadioCard(props: any) {
 // Step 2: Use the `useRadioGroup` hook to control a group of custom radios.
 function UnitSwitch() {
   const { units, setUnits } = useWeatherStore();
-  const [unit, setUnit] = React.useState<string>(units);
   const options = ['°C', '°F']
 
   const { getRootProps, getRadioProps } = useRadioGroup({
     name: 'unit',
-    defaultValue: `${unit === 'metric' ? '°C' : '°F'}`,
+    defaultValue: `${units === 'metric' ? '°C' : '°F'}`,
     onChange: (event: any) => setUnits(event === '°C' ? 'metric' : 'imperial'),
   })
 

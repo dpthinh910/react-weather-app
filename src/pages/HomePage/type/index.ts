@@ -39,7 +39,7 @@ type City = {
   "timezone": number;
 }
 
-type DailyWeather = {
+export type DailyWeather = {
   "dt": number
   "sunrise":number
   "sunset":number

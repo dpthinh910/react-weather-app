@@ -9,7 +9,7 @@ type WeatherStore = {
 
 const useWeatherStore = create<WeatherStore>(set => ({
   location: 'Ho Chi Minh',
-  units: 'metric',
+  units: 'metrics',
   setLocation: (search: string) =>
     set(() => ({
       location: search
